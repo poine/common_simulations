@@ -76,14 +76,18 @@ def create_world(path_filename, model_name, texture_name, texture_resolution):
     create_texture(path_filename, outfile, model_size, texture_resolution)
     
 if __name__ == '__main__':
+
     #create_world(path_filename, "track_ethz", "photo_track_ethz.png")
     texture_resolution = 500. # pixel per meter
 
-    #path_filename = os.path.join(rospkg.RosPack().get_path('two_d_guidance'), 'paths/demo_z/oval_01.npz')
-    #create_world(path_filename, "oval_01", "oval_01_line.png", texture_resolution)
+    if 0:
+        path_filename = os.path.join(rospkg.RosPack().get_path('two_d_guidance'), 'paths/demo_z/oval_01.npz')
+        create_world(path_filename, "oval_01", "oval_01_line.png", texture_resolution)
 
-    #path_filename = os.path.join(rospkg.RosPack().get_path('two_d_guidance'), 'paths/demo_z/line_01.npz')
-    #create_world(path_filename, "line_01", "line_01_line.png", texture_resolution)
+    if 0:
+        path_filename = os.path.join(rospkg.RosPack().get_path('two_d_guidance'), 'paths/demo_z/line_01.npz')
+        create_world(path_filename, "line_01", "line_01_line.png", texture_resolution)
     
-    path_filename = os.path.join(rospkg.RosPack().get_path('two_d_guidance'), 'paths/demo_z/track_ethz_cam1_new.npz')
-    create_world(path_filename, "ethz_cam1", "ethz_cam1_line.png", texture_resolution)
+    if 0:
+        path_filename = os.path.join(rospkg.RosPack().get_path('two_d_guidance'), 'paths/demo_z/track_ethz_cam1_new.npz')
+        create_world(path_filename, "ethz_cam1", "ethz_cam1_line.png", texture_resolution)

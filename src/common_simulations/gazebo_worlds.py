@@ -17,7 +17,7 @@ def write_model_config(name, outfile, description):
   </author>
 
   <description>
-    
+    {}
   </description>
 </model>
 '''.format(name, description))

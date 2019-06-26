@@ -20,29 +20,46 @@
           </friction>
 	</surface>
       </collision>
-      <!-- <visual name="visual"> -->
-      <!-- 	<cast_shadows>false</cast_shadows> -->
-      <!-- 	<geometry> -->
-      <!--     <plane> -->
-      <!--       <normal>0 0 1</normal> -->
-      <!--       <size>10.0 8.0</size> -->
-      <!--     </plane> -->
-      <!-- 	</geometry> -->
-      <!-- 	<material> -->
-      <!--     <script> -->
-      <!--       <uri>model://ethz_cam1/materials/scripts</uri> -->
-      <!--       <uri>model://ethz_cam1/materials/textures</uri> -->
-      <!-- 	    <name>ethz_cam1_floor/Image</name> -->
-      <!--     </script> -->
-      <!-- 	</material> -->
+      <!-- <visual> -->
       <!-- </visual> -->
+      <visual name="visual">
+      	<cast_shadows>false</cast_shadows>
+      	<geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>15.0 5.0</size>
+          </plane>
+      	</geometry>
+      	<material>
+          <script>
+            <uri>model://track_trr/materials/scripts</uri>
+            <uri>model://track_trr/materials/textures</uri>
+      	    <name>track_trr_floor/Image</name>
+          </script>
+      	</material>
+      </visual>
     </link>
 
-    <link name="ground_mesh">
+    <link name="lane">
       <visual name="visual">
     	<geometry>
-          <mesh><uri>model://track_trr/meshes/track_small_full.dae</uri></mesh>
+          <mesh><uri>model://track_trr/meshes/track_small_2_lane.dae</uri></mesh>
     	</geometry>
+      </visual>
+    </link>
+
+   <link name="walls">
+      <visual name="visual">
+    	<geometry>
+          <mesh><uri>model://track_trr/meshes/track_small_2_walls_text.dae</uri></mesh>
+    	</geometry>
+	<!-- <material> -->
+        <!--   <script> -->
+        <!--     <uri>model://track_trr/materials/scripts</uri> -->
+        <!--     <uri>model://track_trr/materials/textures</uri> -->
+      	<!--     <name>track_trr_walls/Image</name> -->
+        <!--   </script> -->
+      	<!-- </material> -->
       </visual>
       <!-- <collision name="collision"> -->
       <!-- 	<geometry> -->
@@ -50,6 +67,25 @@
       <!--   </geometry> -->
       <!-- </collision> -->
     </link>
+
+   <link name="arch">
+      <visual name="visual">
+    	<geometry>
+          <mesh><uri>model://track_trr/meshes/track_small_2_arch.dae</uri></mesh>
+    	</geometry>
+      </visual>
+    </link>
+
+
+   <link name="traffic_light">
+     <pose>0.75 2.75 0 0 0 -1.57</pose>
+      <visual name="visual">
+	<geometry>
+          <mesh><uri>model://track_trr/meshes/traffic_light.dae</uri></mesh>
+    	</geometry>
+      </visual>
+    </link>
+
     
   </model>
 </sdf>

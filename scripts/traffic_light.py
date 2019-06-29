@@ -1,13 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
-import os, sys
-import rospy
-import time
+import os, sys, time
+import rospy, rospkg
 import numpy as np
 from nav_msgs.msg import Odometry
-from geometry_msgs.msg import Pose
+import geometry_msgs.msg
 from std_srvs.srv import Empty
 from gazebo_msgs.srv import SpawnModel, DeleteModel
 
@@ -18,9 +16,9 @@ class TrafficLight:
     color_str = ['red', 'yellow', 'green']
     
     def __init__(self, x=0, y=0):
-        model_dir_path = '/home/poine/work/common_simulations/models/trr/'
+        model_dir_path = os.path.join(rospkg.RosPack().get_path('common_simulations'), 'models/trr/')
         self.light_models = [open(model_dir_path+'/traffic_light_{}/model.sdf'.format(c),'r').read() for c in TrafficLight.color_str] 
-        self.pose = Pose()
+        self.pose = geometry_msgs.msg.Pose()
         self.pose.position.x = x; self.pose.position.y = y; 
         
     def switch_on(self, color):
@@ -39,7 +37,7 @@ class TrafficLight:
 class Agent:
     def __init__(self):
         self.tl1 = TrafficLight(0.75, 2.75)
-        self.reset_proxy = rospy.ServiceProxy('/gazebo/reset_simulation', Empty)
+        #self.reset_proxy = rospy.ServiceProxy('/gazebo/reset_simulation', Empty)
         #self.rate = rospy.Rate(1)
 
     def run(self, what):     
@@ -60,7 +58,7 @@ class Agent:
         rospy.signal_shutdown('done')
         
 def main():
-    rospy.init_node('mission_control')
+    rospy.init_node('traffic_light_controller')
     try:
         agent = Agent()
         agent.run(sys.argv[1])

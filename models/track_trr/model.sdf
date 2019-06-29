@@ -71,7 +71,7 @@
    <link name="arch">
       <visual name="visual">
     	<geometry>
-          <mesh><uri>model://track_trr/meshes/track_small_2_arch.dae</uri></mesh>
+          <mesh><uri>model://track_trr/meshes/track_small_2_arch_text.dae</uri></mesh>
     	</geometry>
       </visual>
     </link>
@@ -84,7 +84,17 @@
           <mesh><uri>model://track_trr/meshes/traffic_light.dae</uri></mesh>
     	</geometry>
       </visual>
-    </link>
+   </link>
+
+
+   <!-- <link name="walker"> -->
+   <!--   <pose>0.75 2.25 0 0 0 -1.57</pose> -->
+   <!--    <visual name="visual"> -->
+   <!-- 	<geometry> -->
+   <!--        <mesh><uri>model://track_trr/meshes/walker_text.dae</uri></mesh> -->
+   <!--  	</geometry> -->
+   <!--    </visual> -->
+   <!--  </link> -->
 
     
   </model>

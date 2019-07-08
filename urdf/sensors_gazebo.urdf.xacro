@@ -51,10 +51,10 @@
       <sensor type="camera" name="${cam_name}">
 	<update_rate>10.0</update_rate>
 	<camera name="head">
-          <horizontal_fov>2.3</horizontal_fov>   <!--<horizontal_fov>1.5</horizontal_fov>-->
+          <horizontal_fov>1.6</horizontal_fov>   <!--<horizontal_fov>1.5</horizontal_fov>-->
           <image>
             <width>640</width>    <!--<width>1280</width>-->
-            <height>360</height>   <!--<height>720</height>-->
+            <height>512</height>   <!--<height>720</height>-->
             <format>R8G8B8</format>
           </image>
           <clip>

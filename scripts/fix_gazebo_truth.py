@@ -4,12 +4,12 @@ import pdb
 
 class Node:
     def __init__(self):
-        robot_name = rospy.get_param('~robot_name', 60)
-        self.odom_sub = rospy.Subscriber('/nono_0/base_link_truth', nav_msgs.msg.Odometry, self.odom_cbk, queue_size=1)
-        self.odom_pub =  rospy.Publisher('/nono_0/base_link_truth1', nav_msgs.msg.Odometry, queue_size=1)
+        self.robot_name = rospy.get_param('~robot_name', "pierrette")
+        self.odom_sub = rospy.Subscriber('/{}/base_link_truth'.format(self.robot_name), nav_msgs.msg.Odometry, self.odom_cbk, queue_size=1)
+        self.odom_pub =  rospy.Publisher('/{}/base_link_truth1'.format(self.robot_name), nav_msgs.msg.Odometry, queue_size=1)
         
     def odom_cbk(self, msg):
-        msg.child_frame_id = "nono_0/base_link"
+        msg.child_frame_id = '{}/base_link'.format(self.robot_name)
         self.odom_pub.publish(msg)
         
     def run(self):

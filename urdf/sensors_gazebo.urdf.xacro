@@ -47,7 +47,7 @@
 
 
   <xacro:macro name="gazebo_rpi_camera" params="cam_name">
-    <gazebo reference="camera1_link">
+    <gazebo reference="${cam_name}_link">
       <sensor type="camera" name="${cam_name}">
 	<update_rate>10.0</update_rate>
 	<camera name="head">

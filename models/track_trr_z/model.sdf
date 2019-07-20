@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="track_trr_z">
+    <pose>0 0 0 0 0 0</pose>
+    <static>true</static>
+    <link name="ground_plane_link">
+      <collision name="collision">
+	<geometry>
+	  <plane><normal>0 0 1</normal><size>60.0 10.0</size></plane>
+	</geometry>
+	<surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+	</surface>
+      </collision>
+      <!-- <visual> -->
+      <!-- </visual> -->
+      <visual name="visual">
+      	<cast_shadows>false</cast_shadows>
+      	<geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>9.0 5.0</size>
+          </plane>
+      	</geometry>
+      	<material>
+          <script>
+            <uri>model://track_trr/materials/scripts</uri>
+            <uri>model://track_trr/materials/textures</uri>
+      	    <name>track_trr_floor/Image</name>
+          </script>
+      	</material>
+      </visual>
+    </link>
+
+    <link name="lane">
+      <visual name="visual">
+    	<geometry>
+          <mesh><uri>model://track_trr_z/meshes/lane.dae</uri></mesh>
+    	</geometry>
+      </visual>
+    </link>
+
+   <link name="walls">
+      <visual name="visual">
+    	<geometry>
+          <mesh><uri>model://track_trr_z/meshes/walls_text.dae</uri></mesh>
+    	</geometry>
+	<!-- <material> -->
+        <!--   <script> -->
+        <!--     <uri>model://track_trr/materials/scripts</uri> -->
+        <!--     <uri>model://track_trr/materials/textures</uri> -->
+      	<!--     <name>track_trr_walls/Image</name> -->
+        <!--   </script> -->
+      	<!-- </material> -->
+      </visual>
+      <!-- <collision name="collision"> -->
+      <!-- 	<geometry> -->
+      <!-- 	  <mesh><uri>model://track_trr_z/meshes/walls.dae</uri></mesh> -->
+      <!--   </geometry> -->
+      <!-- </collision> -->
+    </link>
+
+   <!-- <link name="arch"> -->
+   <!--    <visual name="visual"> -->
+   <!--  	<geometry> -->
+   <!--        <mesh><uri>model://track_trr/meshes/track_small_2_arch_text.dae</uri></mesh> -->
+   <!--  	</geometry> -->
+   <!--    </visual> -->
+   <!--  </link> -->
+
+
+   <link name="traffic_light">
+     <pose>0.75 2.25 0 0 0 -1.57</pose>
+      <visual name="visual">
+	<geometry>
+          <mesh><uri>model://track_trr/meshes/traffic_light.dae</uri></mesh>
+    	</geometry>
+      </visual>
+   </link>
+
+
+   <!-- <link name="walker"> -->
+   <!--   <pose>0.75 2.25 0 0 0 -1.57</pose> -->
+   <!--    <visual name="visual"> -->
+   <!-- 	<geometry> -->
+   <!--        <mesh><uri>model://track_trr/meshes/walker_text.dae</uri></mesh> -->
+   <!--  	</geometry> -->
+   <!--    </visual> -->
+   <!--  </link> -->
+
+    
+  </model>
+</sdf>

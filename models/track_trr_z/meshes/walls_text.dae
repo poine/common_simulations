@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.79.0</authoring_tool>
     </contributor>
-    <created>2019-07-20T17:06:03</created>
-    <modified>2019-07-20T17:06:03</modified>
+    <created>2019-07-21T11:21:13</created>
+    <modified>2019-07-21T11:21:13</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -108,16 +108,16 @@
         <technique sid="common">
           <phong>
             <emission>
-              <color sid="emission">0.39 0.39 0.39 1</color>
+              <color sid="emission">0.2700001 0.2700001 0.2700001 1</color>
             </emission>
             <ambient>
               <color sid="ambient">0 0 0 1</color>
             </ambient>
             <diffuse>
-              <color sid="diffuse">0.7454044 1 0.783538 1</color>
+              <color sid="diffuse">0.7081341 0.95 0.7443611 1</color>
             </diffuse>
             <specular>
-              <color sid="specular">0.03467713 0.3093306 0.3592626 1</color>
+              <color sid="specular">0.03185261 0.2841351 0.33 1</color>
             </specular>
             <shininess>
               <float sid="shininess">30</float>

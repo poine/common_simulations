@@ -36,7 +36,7 @@ class TrafficLight:
                        
 class Agent:
     def __init__(self):
-        self.tl1 = TrafficLight(0.75, 2.75)
+        self.tl1 = TrafficLight(0.75, 2.25) # TODO/FIXME: adjust position for different tracks
         #self.reset_proxy = rospy.ServiceProxy('/gazebo/reset_simulation', Empty)
         #self.rate = rospy.Rate(1)
 

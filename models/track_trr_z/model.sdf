@@ -58,11 +58,11 @@
         <!--   </script> -->
       	<!-- </material> -->
       </visual>
-      <!-- <collision name="collision"> -->
-      <!-- 	<geometry> -->
-      <!-- 	  <mesh><uri>model://track_trr_z/meshes/walls.dae</uri></mesh> -->
-      <!--   </geometry> -->
-      <!-- </collision> -->
+      <collision name="collision">
+      	<geometry>
+      	  <mesh><uri>model://track_trr_z/meshes/walls.dae</uri></mesh>
+        </geometry>
+      </collision>
     </link>
 
    <!-- <link name="arch"> -->

@@ -1,41 +1,55 @@
 <?xml version="1.0"?>
 <sdf version="1.6">
-<model name="ethz_cam1">
-  <pose>0 0 0 0 0 0</pose>
-  <static>true</static>
-    <link name="link">
+  <model name="ethz_cam1">
+    <pose>0 0 0 0 0 0</pose>
+    <static>true</static>
+    <link name="ground_plane_link">
       <collision name="collision">
-        <geometry>
+	<geometry>
           <plane>
             <normal>0 0 1</normal>
             <size>10.0 8.0</size>
           </plane>
-        </geometry>
-        <surface>
+	</geometry>
+	<surface>
           <friction>
             <ode>
               <mu>100</mu>
               <mu2>50</mu2>
             </ode>
           </friction>
-        </surface>
+	</surface>
       </collision>
       <visual name="visual">
-        <cast_shadows>false</cast_shadows>
-        <geometry>
+	<cast_shadows>false</cast_shadows>
+	<geometry>
           <plane>
             <normal>0 0 1</normal>
             <size>10.0 8.0</size>
           </plane>
-        </geometry>
-        <material>
+	</geometry>
+	<material>
           <script>
             <uri>model://ethz_cam1/materials/scripts</uri>
             <uri>model://ethz_cam1/materials/textures</uri>
 	    <name>ethz_cam1_floor/Image</name>
           </script>
-        </material>
+	</material>
       </visual>
     </link>
+
+    <link name="ground_mesh">
+      <visual name="visual">
+	<geometry>
+          <mesh><uri>model://ethz_cam1/meshes/ethz_world_mesh2.dae</uri></mesh>
+	</geometry>
+      </visual>
+        <collision name="collision">
+	  <geometry>
+	    <mesh><uri>model://ethz_cam1/meshes/ethz_world_mesh2.dae</uri></mesh>
+	  </geometry>
+	</collision>
+    </link>
+    
   </model>
 </sdf>

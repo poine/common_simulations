@@ -1,0 +1,19 @@
+material track_ethz_floor/Image
+{
+  technique
+  {
+    pass
+    {
+      ambient 0.5 0.5 0.5 1.0
+      diffuse 1.0 1.0 1.0 1.0
+      specular 0.0 0.0 0.0 1.0 0.5
+
+      texture_unit
+      {
+        texture photo_track_ethz.png
+        filtering trilinear
+        }
+      }
+   }
+ }
+        
